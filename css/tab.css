@@ -1,0 +1,316 @@
+.mingshi_content {
+  margin-top: -2px;
+  width: 100%;
+  height: 540px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+.mingshi_content_tab {
+  background-color: #f8f8f8;
+  padding-top: 80px;
+  padding-bottom: 60px;
+  height: 510px;
+}
+.teachertab_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.teachertab_title_list {
+  width: 240px;
+  height: 58px;
+  border: 2px #e1e1e1 solid;
+  text-align: center;
+  line-height: 58px;
+  font-size: 18px;
+  font-family: FZLTCHJW;
+  color: #000000;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+.teachertab_title_list2 {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.teachertab_swiper_slideimg {
+  border: 1px solid transparent;
+}
+
+.teachertab_title_list_ac {
+  background-image: url("../images/images21/button-xg.png");
+  background-size: 100% 100%;
+  border: none;
+  color: #ffffff;
+  height: 58px;
+  line-height: 58px;
+}
+.teachertab_swiper_slide_abs {
+  width: 185px;
+  height: 116px;
+  padding: 18px 14px;
+  background-color: #000000;
+  opacity:0.8;
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  font-family: FZLTHJW;
+  color:#fff;
+  font-size: 14px;
+  line-height: 16px;
+  z-index: 999;
+}
+.teachertab_swiper_slide_abs_s1 {
+  display: inline-block;
+  margin-bottom: 5px;
+  color: #fa5e31;
+  font-size: 18px;
+}
+.teachertab_swiper_slideimg_ac {
+
+}
+
+/* mingshi end */
+
+
+/* sharp begin */
+.sharp {
+  width: 1200px;
+  height: auto;
+  margin: 0px auto;
+}
+/* sharp end */
+
+/* 定位按钮  begin*/
+.fexdleft {
+  width: 194px;
+  height: 189px;
+  background-image: url("../images/pobutton.png");
+  background-size: 100% 100%;
+  padding-top: 46px;
+  position: fixed;
+  top: 50%;
+  margin-top: -95px;
+  left: 12px;
+  cursor: pointer;
+  z-index: 999;
+}
+.fexdleft:hover {
+  margin-top: -97px;
+}
+.fexdleft_text {
+  width: 194px;
+  text-align: center;
+  font-size: 31px;
+  font-family: FZLTCHJW;
+  color: #ffd924;
+}
+.fexdright {
+  position: fixed;
+  top: 50%;
+  margin-top: -224.5px;
+  right: 2px;
+  display: -moz-box;  /* Firefox */
+  display: -ms-flexbox;    /* IE10 */
+  display: -webkit-box;    /* Safari */ 
+  display: -webkit-flex;    /* Chrome, WebKit */
+  display: box; 
+  display: flexbox; 
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  z-index: 999;
+}
+.fexdright_top {
+  width: 171px;
+  height: 403px;
+  background-image: url("../images/foxedright_03.png");
+  background-size: 100% 100%;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.fexdright_top_item {
+  width: 152px;
+  height: 46px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: FZLTHJW;
+  text-align: center;
+  line-height: 46px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #2f2f2f;
+}
+.fexdright_top_item img {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.fexdright_top_iteml {
+  width: 152px;
+  height: 46px;
+  font-size: 15px;
+  font-family: FZLTHJW;
+  text-align: center;
+  line-height: 46px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #ffffff;
+}
+.fexdright_top_iteml:hover{
+  margin-top: -2px;
+}
+.fexdright_top_iteml img {
+  margin-right: 22px;
+}
+.fexdright_bottom {
+  cursor: pointer;
+}
+/* 定位按钮  end*/
+/* swiper */
+
+/* swiper */
+
+.hide {
+  display: none;
+}
+.teachertab_swiper_slideimg_ac {
+  border-color: red;
+}
+
+/* swiper 定位 */
+
+
+
+
+/* 四大研究院 */
+.teachertab_content_text {
+  width: 100%;
+  height: 312px;
+}
+.teachertab_content_text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.offcn_pubteach span{
+  display: block;
+  font-size: 16px;
+  margin-top: 21px;
+}
+.offcn_teach01 {
+  width: 233px;
+  height: 291px;
+  background-image: url("../images/offcn_msteach01.jpg");
+  background-size: 100% 100%;
+  padding-top: 16px;
+  padding-left: 68px;
+}
+.offcn_pubteach h2{
+  color: #ffffff;
+}
+.offcn_pubteach h3{
+  color: #ffffff;
+}
+.offcn_teach01 h2, .offcn_teach03 h2 {
+  margin-bottom: 36px;
+
+}
+.offcn_teach01 p {
+  padding-left: 68px;
+}
+.offcn_teach02 {
+  width: 447px;
+  height: 292px;
+  background-image: url("../images/offcn_msteach02.jpg");
+  background-size: 100% 100%;
+  padding-top: 16px;
+}
+.offcn_teach02 h2 {
+  margin-left: 167px;
+  margin-bottom: 35px;
+}
+.offcn_teach02 h3 {
+  margin-bottom: 24px;
+}
+.offcn_teach02_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: flex-start;
+  -ms-flex-pack: flex-start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+
+}
+.offcn_lewid00 {
+  margin-left: 45px;
+}
+.offcn_lewid01 {
+  margin-left: 45px;
+}
+.offcn_lewid02 {
+  margin-left: 27px;
+}
+.offcn_teach03 {
+  width: 233px;
+  height: 292px;
+  background-image: url("../images/offcn_msteach03.jpg");
+  background-size: 100% 100%;
+  padding-top: 16px;
+  padding-left: 65px;
+}
+.offcn_teach03 h2 {
+  margin-bottom: 39px;
+}
+.offcn_teach04 h2 {
+  margin-bottom: 36px;
+}
+.offcn_teach04 {
+  width: 233px;
+  height: 292px;
+  background-image: url("../images/offcn_msteach04.jpg");
+  background-size: 100% 100%;
+  padding-top: 16px;
+  padding-left: 65px;
+
+}
+/* 四大研究院 */

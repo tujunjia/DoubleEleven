@@ -1,0 +1,266 @@
+@charset "utf-8";
+/* CSS Document Edited by 木易 */
+*{
+  margin:0;
+  padding:0;
+  outline:none;
+  list-style:none;
+  text-decoration:none;
+  box-sizing: border-box; 
+}
+body,html {
+  color:#333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  max-width:720px;
+  background: #FFFFFF;
+  font-family: 'FZLTHJW';
+  position: relative;
+  font-size: .18rem;
+  margin: 0 auto;
+}
+body{
+  overflow-x: hidden;
+}
+img {
+  border:none;
+  max-width: 100%;
+  width: auto\9;
+  height: auto;
+  -ms-interpolation-mode: bicubic;  
+}
+input, textarea ,select{
+  border:none;
+  background:none;
+  cursor:pointer;
+  font-size:14px;
+  vertical-align:middle;
+  color:#333; 
+  font-family:'FZLTHJW';
+}
+select {
+  border:inherit;
+  background: inherit; 
+}
+a {
+  text-decoration:none;
+  color:#333; 
+}
+em, i {
+  font-style:normal;  
+}
+a:focus, input, select {
+  outline:none;  
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.clearfix {
+  *zoom:1; 
+  clear: both; 
+}
+.clearfix:after {
+  content:"\200B"; 
+  display: block;
+  clear: both;
+  height: 0;  
+}
+input[type="submit"], input[type="reset"], input[type="button"], button, select {
+  -webkit-appearance: none;  
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{ 
+  font-weight: normal; 
+  padding: 0; 
+  margin: 0; 
+  font-size: 14px; 
+  line-height: 1.4;  
+  font-family:'FZLTHJW';
+}
+p,ul, ol{ 
+  margin: 0;
+}
+img{
+  vertical-align: top;
+}
+/**  公共样式  END   **/
+
+/* head */
+.header{
+  height: .8rem;
+  line-height:.8rem;
+  background:#2f2f2f;
+  padding: 0 .1rem;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  max-width: 7.2rem;
+}
+.logo{
+  display: block;
+  width: 2.5rem;
+  position: relative;top: 0;
+}
+.logo img{
+  vertical-align: middle;
+}
+.headTel{
+  height:100%;
+  display: block;
+  padding-left: .32rem;
+  color: #fff;
+  line-height: .9rem;
+  font-weight: bold;
+  background: url(../images/headTel.png) no-repeat left center;
+  background-size: .24rem .3rem;
+  font-size:.18rem;
+}
+.headerPos{
+  width:100%;
+  height:.8rem;
+}
+
+.main9 {
+  background: #000c2c;
+  padding: .4rem 0;
+  text-align: center; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main9 p {
+  padding: 0 .4rem; 
+  padding-top: 0.1rem;
+  font-size: 0.16rem;
+  color: #c2c2c2;
+  line-height: .3rem;
+}
+.main9 p a {
+  font-size: 0.18rem;
+  color: #c2c2c2;
+}
+
+/* foot */
+.footerPos{
+  width:100%;
+  height:.88rem;
+}
+footer{
+  display: block;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 720px;
+  z-index:99;}
+footer a{
+  display: block;
+  float: left;
+  width: 50%;
+  text-align: center;
+  height: .88rem;
+  line-height: .88rem;}
+footer a em{
+  color: #fff;
+  background: no-repeat left center;
+  background-size: contain;
+}
+.footerTel{
+  background: #4b5fda;
+  font-size:.26rem;
+}
+.footerTel em{
+  background-image: url(../images/footerTel.png);
+  font-style: italic;
+  padding-left: .5rem;
+}
+.footerOnline{background: #ffad11;font-size:.26rem;}
+.footerOnline em{
+  background-image: url(../images/footeronline.png);    
+  padding-left: .5rem;
+}
+
+/* 方正兰亭黑简体 */
+@font-face {
+  font-family: 'FZLTHJW';
+  src: url('../fonts/FZLTHJW.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* 方正兰亭粗黑简体 */
+@font-face {
+  font-family: 'FZLTCHJW';
+  src: url('../fonts/FZLTCHJW.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* 方正兰亭特黑简体 */
+@font-face {
+  font-family: 'FZLTTHJW';
+  src: url('../fonts/FZLTTHJW.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* 方正汉真广标简体 */
+@font-face {
+  font-family: 'FZHZGBJW';
+  src: url('../fonts/FZHZGBJW.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* 方正粗谭黑简体 */
+@font-face {
+  font-family: 'FZCTHJW';
+  src: url('../fonts/FZCTHJW.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* 方正粉丝天下简体 */
+@font-face {
+  font-family: 'FZFenSTXJW';
+  src: url('../fonts/FZFenSTXJW.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* 方正清刻本悦宋简体 */
+@font-face {
+  font-family: 'FZQKBYSJW';
+  src: url('../fonts/FZQKBYSJW.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* 方正趣宋简体 */
+@font-face {
+  font-family: 'FZQuSJW';
+  src: url('../fonts/FZQuSJW.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* 方正尚酷简体 */
+@font-face {
+  font-family: 'FZShangKJW';
+  src: url('../fonts/FZShangKJW.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* 方正特雅宋简体 */
+@font-face {
+  font-family: 'FZTYSJW';
+  src: url('../fonts/FZTYSJW.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* 站酷小薇 */
+@font-face {
+  font-family: 'ZKXW';
+  src: url('../fonts/站酷小薇LOGO体.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
