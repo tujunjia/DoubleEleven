@@ -1,0 +1,89 @@
+
+.light {
+  width: 763px;
+  height: 653px;
+  padding: 47px 56px 63px 49px;
+  box-sizing: border-box;
+}
+.light .gift_div {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+.gift_div>div {
+  position: absolute;
+  width: 210px;
+  height: 173px;
+  text-indent: -9999px;
+}
+.gift1{
+  background: url(../images/yhq_30.png) no-repeat;
+}
+.gift2{
+  background: url(../images/yhq_70.png) no-repeat;
+}
+.gift3{
+  background: url(../images/yhq_book.png) no-repeat;
+}
+.gift4{
+  background: url(../images/yhq_50.png) no-repeat;
+}
+.gift5{
+  background: url(../images/yhq_zz.png) no-repeat;
+}
+.gift6{
+  background: url(../images/yhq_yy.png) no-repeat;
+}
+.gift7{
+  background: url(../images/yhq_btn.png) no-repeat;
+}
+.gift8{
+  background: url(../images/yhq_2021.png) no-repeat;
+}
+.gift2,
+.gift6,
+.start{
+  left: 224px;
+}
+.gift3,
+.gift4,
+.gift5{
+  right: 0;
+}
+.gift4,
+.gift8,
+.start{
+  top: 185px;
+}
+.gift5,
+.gift6,
+.gift7{
+  bottom: 0;
+}
+.gift_div .start{
+  background: url(../images/yhq_btn.png) no-repeat;
+  text-align: center;
+  line-height: 173px;
+  color: #FF001F;
+  cursor: pointer;
+}
+.red{
+  color: red;
+}
+.num{
+  text-align: center;
+  font-size: .32rem;
+  line-height: .6rem;
+  background: #E6EFEC;
+  border-radius: .6rem;
+}
+.gift_b:after{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.6);
+  content: '';
+  left: 0;
+  border-radius: 18px;
+}
