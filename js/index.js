@@ -8,41 +8,60 @@
     })
   });
   
-  $('#backToTop').on('click',function(){
-    var href = $(this).attr('href');
+  /* $('#backToTop').on('click',function(){
+    var href = $(this.hash).attr('href');
     $("html").stop().animate({scrollTop: $(href).offset().top},1000);
     return false;
-  })
+  }) */
+
+  $("#backToTop").click(function(event){
+    event.preventDefault();
+    
+    var pos = $(this.hash).offset().top;
+    $('html,body').animate({scrollTop:pos},1000);
+  });
   //定时换banner+视频
   function time1(){
-    var timestamp1 = (new Date("2019/11/5 24:00:00")).getTime();
-    var timestamp2 = (new Date("2019/11/10 24:00:00")).getTime();
-    var timestamp3 = (new Date("2019/11/13 24:00:00")).getTime();
-    var timestamp4 = (new Date("2019/11/17 24:00:00")).getTime();
+    //var timestamp1 = (new Date("2019/11/10 24:00:00")).getTime();
+    var oCurr1 = new Date();
+    oCurr1.setFullYear(2019,10,10);
+    oCurr1.setHours(24,0,0,0);
+    var timestamp1 = oCurr1.getTime();
+    //var timestamp2 = (new Date("2019/11/11 24:00:00")).getTime();
+    var oCurr2 = new Date();
+    oCurr2.setFullYear(2019,10,11);
+    oCurr2.setHours(24,0,0,0);
+    var timestamp2 = oCurr2.getTime();
+    //var timestamp3 = (new Date("2019/11/13 24:00:00")).getTime();
+    var oCurr3 = new Date();
+    oCurr3.setFullYear(2019,10,13);
+    oCurr3.setHours(24,0,0,0);
+    var timestamp3 = oCurr3.getTime();
+    //var timestamp4 = (new Date("2019/11/17 24:00:00")).getTime();
+    var oCurr4 = new Date();
+    oCurr4.setFullYear(2019,10,17);
+    oCurr4.setHours(24,0,0,0);
+    var timestamp4 = oCurr4.getTime();
+
     var oNow = new Date();
     var iNow = oNow.getTime();
 
-    if(iNow<timestamp1){
+    if(iNow<timestamp1){   //10号之前
       $('#banner img').attr('src','images/banner1.jpg');
       $('#zgVideo1').show();
       $('#zgVideo2').hide();
       $('#zgVideo3').hide();
-    }else if(iNow >=timestamp1 && iNow < timestamp2){
-      $('#banner img').attr('src','images/banner1.jpg');
-      $('#zgVideo1').show();
-      $('#zgVideo2').hide();
-      $('#zgVideo3').hide();
-    }else if(iNow >=timestamp2 && iNow < timestamp3){
+    }else if(iNow >=timestamp1 && iNow < timestamp2){  //11号当天
       $('#banner img').attr('src','images/banner2.jpg');
       $('#zgVideo1').hide();
       $('#zgVideo2').show();
       $('#zgVideo3').hide();
-    }else if(iNow >=timestamp3 && iNow < timestamp4){
-      $('#banner img').attr('src','images/banner3.jpg');
-      $('#zgVideo1').hide();
+    }else if(iNow >=timestamp2 && iNow < timestamp3){  //12-13号
+      $('#banner img').attr('src','images/banner2.jpg');
+      $('#zgVideo1').show();
       $('#zgVideo2').hide();
-      $('#zgVideo3').show();
-    }else if(iNow >=timestamp4){
+      $('#zgVideo3').hide();
+    }else if(iNow >=timestamp4){  //13号-17号
       $('#banner img').attr('src','images/banner3.jpg');
       $('#zgVideo1').hide();
       $('#zgVideo2').hide();
@@ -136,6 +155,7 @@
   function tab(id,conid){
     $(id+' .times').each(function(){
       $(this).find('.timeq').on('click',function(){
+        
         var index = $(this).parent().index();
         console.log(index)
         $(this).parent().find('.quantime').addClass('activeT');
@@ -143,6 +163,11 @@
         $(this).addClass('activeB');
         $(this).parent().siblings().find('.timeq').removeClass('activeB');
         $(conid+' .course_area').eq(index).css('display','flex').siblings().css('display','none');
+        clearInterval(timerrr);
+        clearInterval(cleartime);
+        var cleartime = setTimeout(function(){
+          current()
+        },10000);
       })
     })
   }
@@ -151,14 +176,353 @@
   tab('#btngItem3','#cwgItem3');
   tab('#btngItem4','#cwgItem4');
 
+  //当天
+  function current(){
+    /* 6-10号 */
+    //var currentTime1 = (new Date("2019/11/6 24:00:00")).getTime(); //6号
+    var oCurr1 = new Date();
+    oCurr1.setFullYear(2019,10,6);
+    oCurr1.setHours(24,0,0,0);
+    var currentTime1 = oCurr1.getTime();
+
+    //var currentTime2 = (new Date("2019/11/7 24:00:00")).getTime(); //7号
+    var oCurr2 = new Date();
+    oCurr2.setFullYear(2019,10,7);
+    oCurr2.setHours(24,0,0,0);
+    var currentTime2 = oCurr2.getTime();
+    //var currentTime3 = (new Date("2019/11/8 24:00:00")).getTime(); //8号
+    var oCurr3 = new Date();
+    oCurr3.setFullYear(2019,10,8);
+    oCurr3.setHours(24,0,0,0);
+    var currentTime3 = oCurr3.getTime();
+    //var currentTime4 = (new Date("2019/11/9 24:00:00")).getTime(); //9号
+    var oCurr4 = new Date();
+    oCurr4.setFullYear(2019,10,9);
+    oCurr4.setHours(24,0,0,0);
+    var currentTime4 = oCurr4.getTime();
+    //var currentTime5 = (new Date("2019/11/10 24:00:00")).getTime(); //10号
+    var oCurr5 = new Date();
+    oCurr5.setFullYear(2019,10,10);
+    oCurr5.setHours(24,0,0,0);
+    var currentTime5 = oCurr5.getTime();
+    //var currentTime6 = (new Date("2019/11/11 24:00:00")).getTime(); //11号
+    var oCurr6 = new Date();
+    oCurr6.setFullYear(2019,10,11);
+    oCurr6.setHours(24,0,0,0);
+    var currentTime6 = oCurr6.getTime();
+
+    /* 11号当天 */
+    //11点
+    var oCurr11 = new Date();
+    oCurr11.setFullYear(2019,10,11);
+    oCurr11.setHours(11,0,0,0);
+    var currentTime11 = oCurr11.getTime();
+    //13点
+    var oCurr21 = new Date();
+    oCurr21.setFullYear(2019,10,11);
+    oCurr21.setHours(13,0,0,0);
+    var currentTime21 = oCurr21.getTime();
+    //15点
+    var oCurr31 = new Date();
+    oCurr31.setFullYear(2019,10,11);
+    oCurr31.setHours(15,0,0,0);
+    var currentTime31 = oCurr31.getTime();
+    //17点
+    var oCurr41 = new Date();
+    oCurr41.setFullYear(2019,10,11);
+    oCurr41.setHours(17,0,0,0);
+    var currentTime41 = oCurr41.getTime();
+    //19点
+    var oCurr51 = new Date();
+    oCurr51.setFullYear(2019,10,11);
+    oCurr51.setHours(19,0,0,0);
+    var currentTime51 = oCurr51.getTime();
+    //21点
+    var oCurr61 = new Date();
+    oCurr61.setFullYear(2019,10,11);
+    oCurr61.setHours(21,0,0,0);
+    var currentTime61 = oCurr61.getTime();  
+    //23点
+    var oCurr71 = new Date();
+    oCurr71.setFullYear(2019,10,11);
+    oCurr71.setHours(23,0,0,0);
+    var currentTime71 = oCurr71.getTime();    
+    /* 12-13号 */
+    //12号
+    var oCurr12 = new Date();
+    oCurr12.setFullYear(2019,10,12);
+    oCurr12.setHours(24,0,0,0);
+    var currentTime12 = oCurr12.getTime();
+
+    //13号
+    var oCurr22 = new Date();
+    oCurr22.setFullYear(2019,10,13);
+    oCurr22.setHours(24,0,0,0);
+    var currentTime22 = oCurr22.getTime();
+
+    /* 14-17号 */
+    //14号
+    var oCurr13 = new Date();
+    oCurr13.setFullYear(2019,10,14);
+    oCurr13.setHours(24,0,0,0);
+    var currentTime13 = oCurr13.getTime();
+
+    //15号
+    var oCurr23 = new Date();
+    oCurr23.setFullYear(2019,10,15);
+    oCurr23.setHours(24,0,0,0);
+    var currentTime23 = oCurr23.getTime();
+    //16号
+    var oCurr33 = new Date();
+    oCurr33.setFullYear(2019,10,16);
+    oCurr33.setHours(24,0,0,0);
+    var currentTime33 = oCurr33.getTime();
+    //17号
+    var oCurr43 = new Date();
+    oCurr43.setFullYear(2019,10,17);
+    oCurr43.setHours(24,0,0,0);
+    var currentTime43 = oCurr43.getTime();
+
+    var iNow = (new Date()).getTime();
+    /* 6-10条件 */
+    if(iNow<currentTime1){
+      // $($('#btngItem1 .times').eq(0).find('.quantime')).addClass('activeT').siblings().find('.quantime').removeClass('activeT');
+      // $($('#btngItem1 .times').eq(0).find('.timeq')).addClass('activeB').siblings().find('.timeq').removeClass('activeB');
+      $('#btngItem1 .times').eq(0).find('.quantime').addClass('activeT');
+      $('#btngItem1 .times').eq(0).find('.timeq').addClass('activeB');
+      $('#btngItem1 .times').eq(0).siblings().find('.quantime').removeClass('activeT');
+      $('#btngItem1 .times').eq(0).siblings().find('.timeq').removeClass('activeB');
+
+      $('#cwgItem1 .course_area').eq(0).css('display','flex').siblings().css('display','none');
+
+      /* $('#btngItem1 .times').each(function(){
+        $(this).find('.timeq').on('click',function(){
+          var index = $(this).parent().index();
+          console.log(index)
+          $(this).parent().find('.quantime').addClass('activeT');
+          $(this).parent().siblings().find('.quantime').removeClass('activeT');
+          $(this).addClass('activeB');
+          $(this).parent().siblings().find('.timeq').removeClass('activeB');
+          $(conid+' .course_area').eq(index).css('display','flex').siblings().css('display','none');
+        })
+      }) */
+    }else if(iNow>=currentTime1 && iNow<currentTime2){
+      $('#btngItem1 .times').eq(1).find('.quantime').addClass('activeT');
+      $('#btngItem1 .times').eq(1).find('.timeq').addClass('activeB');
+      $('#btngItem1 .times').eq(1).siblings().find('.quantime').removeClass('activeT');
+      $('#btngItem1 .times').eq(1).siblings().find('.timeq').removeClass('activeB');
+
+      $('#cwgItem1 .course_area').eq(1).css('display','flex').siblings().css('display','none');
+    }else if(iNow>=currentTime2 && iNow<currentTime3){
+      $('#btngItem1 .times').eq(2).find('.quantime').addClass('activeT');
+      $('#btngItem1 .times').eq(2).find('.timeq').addClass('activeB');
+      $('#btngItem1 .times').eq(2).siblings().find('.quantime').removeClass('activeT');
+      $('#btngItem1 .times').eq(2).siblings().find('.timeq').removeClass('activeB');
+
+      $('#cwgItem1 .course_area').eq(2).css('display','flex').siblings().css('display','none');
+    }else if(iNow>=currentTime3 && iNow<currentTime4){
+      $('#btngItem1 .times').eq(3).find('.quantime').addClass('activeT');
+      $('#btngItem1 .times').eq(3).find('.timeq').addClass('activeB');
+      $('#btngItem1 .times').eq(3).siblings().find('.quantime').removeClass('activeT');
+      $('#btngItem1 .times').eq(3).siblings().find('.timeq').removeClass('activeB');
+
+      $('#cwgItem1 .course_area').eq(3).css('display','flex').siblings().css('display','none');
+    }else if(iNow>=currentTime4 && iNow<currentTime5){
+      $('#btngItem1 .times').eq(4).find('.quantime').addClass('activeT');
+      $('#btngItem1 .times').eq(4).find('.timeq').addClass('activeB');
+      $('#btngItem1 .times').eq(4).siblings().find('.quantime').removeClass('activeT');
+      $('#btngItem1 .times').eq(4).siblings().find('.timeq').removeClass('activeB');
+
+      $('#cwgItem1 .course_area').eq(4).css('display','flex').siblings().css('display','none');
+    }else if(iNow>=currentTime5 && iNow<currentTime6){
+      $('#btngItem1 .times').eq(5).find('.quantime').addClass('activeT');
+      $('#btngItem1 .times').eq(5).find('.timeq').addClass('activeB');
+      $('#btngItem1 .times').eq(5).siblings().find('.quantime').removeClass('activeT');
+      $('#btngItem1 .times').eq(5).siblings().find('.timeq').removeClass('activeB');
+
+      $('#cwgItem1 .course_area').eq(5).css('display','flex').siblings().css('display','none');
+    }
+    /* 11号当天条件 */
+    if(iNow<currentTime11){
+      $('#btngItem2 .times').eq(0).find('.quantime').addClass('activeT');
+      $('#btngItem2 .times').eq(0).find('.timeq').addClass('activeB');
+      $('#btngItem2 .times').eq(0).siblings().find('.quantime').removeClass('activeT');
+      $('#btngItem2 .times').eq(0).siblings().find('.timeq').removeClass('activeB');
+
+      $('#cwgItem2 .course_area').eq(0).css('display','flex').siblings().css('display','none');
+    }else if(iNow>=currentTime11 && iNow<currentTime21){
+      $('#btngItem2 .times').eq(0).find('.quantime').addClass('activeT');
+      $('#btngItem2 .times').eq(0).find('.timeq').addClass('activeB');
+      $('#btngItem2 .times').eq(0).siblings().find('.quantime').removeClass('activeT');
+      $('#btngItem2 .times').eq(0).siblings().find('.timeq').removeClass('activeB');
+
+      $('#cwgItem2 .course_area').eq(0).css('display','flex').siblings().css('display','none');
+    }else if(iNow>=currentTime21 && iNow<currentTime31){
+      $('#btngItem2 .times').eq(1).find('.quantime').addClass('activeT');
+      $('#btngItem2 .times').eq(1).find('.timeq').addClass('activeB');
+      $('#btngItem2 .times').eq(1).siblings().find('.quantime').removeClass('activeT');
+      $('#btngItem2 .times').eq(1).siblings().find('.timeq').removeClass('activeB');
+
+      $('#cwgItem2 .course_area').eq(1).css('display','flex').siblings().css('display','none');
+    }else if(iNow>=currentTime31 && iNow<currentTime41){
+      $('#btngItem2 .times').eq(2).find('.quantime').addClass('activeT');
+      $('#btngItem2 .times').eq(2).find('.timeq').addClass('activeB');
+      $('#btngItem2 .times').eq(2).siblings().find('.quantime').removeClass('activeT');
+      $('#btngItem2 .times').eq(2).siblings().find('.timeq').removeClass('activeB');
+
+      $('#cwgItem2 .course_area').eq(2).css('display','flex').siblings().css('display','none');
+    }else if(iNow>=currentTime41 && iNow<currentTime51){
+      $('#btngItem2 .times').eq(3).find('.quantime').addClass('activeT');
+      $('#btngItem2 .times').eq(3).find('.timeq').addClass('activeB');
+      $('#btngItem2 .times').eq(3).siblings().find('.quantime').removeClass('activeT');
+      $('#btngItem2 .times').eq(3).siblings().find('.timeq').removeClass('activeB');
+
+      $('#cwgItem2 .course_area').eq(3).css('display','flex').siblings().css('display','none');
+    }else if(iNow>=currentTime51 && iNow<currentTime61){
+      $('#btngItem2 .times').eq(4).find('.quantime').addClass('activeT');
+      $('#btngItem2 .times').eq(4).find('.timeq').addClass('activeB');
+      $('#btngItem2 .times').eq(4).siblings().find('.quantime').removeClass('activeT');
+      $('#btngItem2 .times').eq(4).siblings().find('.timeq').removeClass('activeB');
+
+      $('#cwgItem2 .course_area').eq(4).css('display','flex').siblings().css('display','none');
+    }else if(iNow>=currentTime61 && iNow<currentTime71){
+      $('#btngItem2 .times').eq(5).find('.quantime').addClass('activeT');
+      $('#btngItem2 .times').eq(5).find('.timeq').addClass('activeB');
+      $('#btngItem2 .times').eq(5).siblings().find('.quantime').removeClass('activeT');
+      $('#btngItem2 .times').eq(5).siblings().find('.timeq').removeClass('activeB');
+
+      $('#cwgItem2 .course_area').eq(5).css('display','flex').siblings().css('display','none');
+    }else if(iNow>=currentTime71){
+      $('#btngItem2 .times').eq(6).find('.quantime').addClass('activeT');
+      $('#btngItem2 .times').eq(6).find('.timeq').addClass('activeB');
+      $('#btngItem2 .times').eq(6).siblings().find('.quantime').removeClass('activeT');
+      $('#btngItem2 .times').eq(6).siblings().find('.timeq').removeClass('activeB');
+
+      $('#cwgItem2 .course_area').eq(6).css('display','flex').siblings().css('display','none');
+    }
+    /* 12-13条件 */
+    if(iNow<currentTime12){
+      $('#btngItem3 .times').eq(0).find('.quantime').addClass('activeT');
+      $('#btngItem3 .times').eq(0).find('.timeq').addClass('activeB');
+      $('#btngItem3 .times').eq(0).siblings().find('.quantime').removeClass('activeT');
+      $('#btngItem3 .times').eq(0).siblings().find('.timeq').removeClass('activeB');
+
+      $('#cwgItem3 .course_area').eq(0).css('display','flex').siblings().css('display','none');
+    }else if(iNow>=currentTime12 && iNow<currentTime22){
+      $('#btngItem3 .times').eq(1).find('.quantime').addClass('activeT');
+      $('#btngItem3 .times').eq(1).find('.timeq').addClass('activeB');
+      $('#btngItem3 .times').eq(1).siblings().find('.quantime').removeClass('activeT');
+      $('#btngItem3 .times').eq(1).siblings().find('.timeq').removeClass('activeB');
+
+      $('#cwgItem3 .course_area').eq(1).css('display','flex').siblings().css('display','none');
+    } 
+    /* 14-17条件 */
+    if(iNow<currentTime13){
+      $('#btngItem4 .times').eq(0).find('.quantime').addClass('activeT');
+      $('#btngItem4 .times').eq(0).find('.timeq').addClass('activeB');
+      $('#btngItem4 .times').eq(0).siblings().find('.quantime').removeClass('activeT');
+      $('#btngItem4 .times').eq(0).siblings().find('.timeq').removeClass('activeB');
+
+      $('#cwgItem4 .course_area').eq(0).css('display','flex').siblings().css('display','none');
+    }else if(iNow>=currentTime13 && iNow<currentTime23){
+      $('#btngItem4 .times').eq(1).find('.quantime').addClass('activeT');
+      $('#btngItem4 .times').eq(1).find('.timeq').addClass('activeB');
+      $('#btngItem4 .times').eq(1).siblings().find('.quantime').removeClass('activeT');
+      $('#btngItem4 .times').eq(1).siblings().find('.timeq').removeClass('activeB');
+
+      $('#cwgItem4 .course_area').eq(1).css('display','flex').siblings().css('display','none');
+    }else if(iNow>=currentTime23 && iNow<currentTime33){
+      $('#btngItem4 .times').eq(2).find('.quantime').addClass('activeT');
+      $('#btngItem4 .times').eq(2).find('.timeq').addClass('activeB');
+      $('#btngItem4 .times').eq(2).siblings().find('.quantime').removeClass('activeT');
+      $('#btngItem4 .times').eq(2).siblings().find('.timeq').removeClass('activeB');
+
+      $('#cwgItem4 .course_area').eq(2).css('display','flex').siblings().css('display','none');
+    }else if(iNow>=currentTime33 && iNow<currentTime43){
+      $('#btngItem4 .times').eq(3).find('.quantime').addClass('activeT');
+      $('#btngItem4 .times').eq(3).find('.timeq').addClass('activeB');
+      $('#btngItem4 .times').eq(3).siblings().find('.quantime').removeClass('activeT');
+      $('#btngItem4 .times').eq(3).siblings().find('.timeq').removeClass('activeB');
+
+      $('#cwgItem4 .course_area').eq(3).css('display','flex').siblings().css('display','none');
+    }
+  }
+  current();
+  clearInterval(timerrr);
+  var timerrr = setInterval(function(){
+    current();
+  },1000);
+
   //6-10秒杀课
   function msk1(){
-    var timestamp1 = (new Date("2019/11/5 24:00:00")).getTime();
-    var timestamp2 = (new Date("2019/11/6 24:00:00")).getTime();
-    var timestamp3 = (new Date("2019/11/7 24:00:00")).getTime();
-    var timestamp4 = (new Date("2019/11/8 24:00:00")).getTime();
-    var timestamp5 = (new Date("2019/11/9 24:00:00")).getTime();
-    var timestamp6 = (new Date("2019/11/10 24:00:00")).getTime();
+    //var timestamp1 = (new Date("2019/11/6 19:00:00")).getTime();
+    var oCurr1 = new Date();
+    oCurr1.setFullYear(2019,10,6);
+    oCurr1.setHours(19,0,0,0);
+    var timestamp1 = oCurr1.getTime();
+    //var timestamp2 = (new Date("2019/11/6 19:30:00")).getTime();
+    var oCurr2 = new Date();
+    oCurr2.setFullYear(2019,10,6);
+    oCurr2.setHours(19,30,0,0);
+    var timestamp2 = oCurr2.getTime();
+
+    //var timestamp3 = (new Date("2019/11/7 19:00:00")).getTime();
+    var oCurr3 = new Date();
+    oCurr3.setFullYear(2019,10,7);
+    oCurr3.setHours(19,0,0,0);
+    var timestamp3 = oCurr3.getTime();
+    //var timestamp4 = (new Date("2019/11/7 19:30:00")).getTime();
+    var oCurr4 = new Date();
+    oCurr4.setFullYear(2019,10,7);
+    oCurr4.setHours(19,30,0,0);
+    var timestamp4 = oCurr4.getTime();
+
+    //var timestamp5 = (new Date("2019/11/8 19:00:00")).getTime();
+    var oCurr5 = new Date();
+    oCurr5.setFullYear(2019,10,8);
+    oCurr5.setHours(19,0,0,0);
+    var timestamp5 = oCurr5.getTime();
+    //var timestamp6 = (new Date("2019/11/8 19:30:00")).getTime();
+    var oCurr6 = new Date();
+    oCurr6.setFullYear(2019,10,8);
+    oCurr6.setHours(19,30,0,0);
+    var timestamp6 = oCurr6.getTime();
+
+    //var timestamp7 = (new Date("2019/11/9 19:00:00")).getTime();
+    var oCurr7 = new Date();
+    oCurr7.setFullYear(2019,10,9);
+    oCurr7.setHours(19,0,0,0);
+    var timestamp7 = oCurr7.getTime();
+    //var timestamp8 = (new Date("2019/11/9 19:30:00")).getTime();
+    var oCurr8 = new Date();
+    oCurr8.setFullYear(2019,10,9);
+    oCurr8.setHours(19,30,0,0);
+    var timestamp8 = oCurr8.getTime();
+
+    //var timestamp9 = (new Date("2019/11/10 19:00:00")).getTime();
+    var oCurr9 = new Date();
+    oCurr9.setFullYear(2019,10,10);
+    oCurr9.setHours(19,0,0,0);
+    var timestamp9 = oCurr9.getTime();
+    //var timestamp10 = (new Date("2019/11/10 19:30:00")).getTime();
+    var oCurr10 = new Date();
+    oCurr10.setFullYear(2019,10,10);
+    oCurr10.setHours(19,30,0,0);
+    var timestamp10 = oCurr10.getTime();
+
+    //var timestamp11 = (new Date("2019/11/11 19:00:00")).getTime();
+    var oCurr11 = new Date();
+    oCurr11.setFullYear(2019,10,11);
+    oCurr11.setHours(19,0,0,0);
+    var timestamp11 = oCurr11.getTime();
+    //var timestamp12 = (new Date("2019/11/11 19:30:00")).getTime();
+    var oCurr12 = new Date();
+    oCurr12.setFullYear(2019,10,11);
+    oCurr12.setHours(19,30,0,0);
+    var timestamp12 = oCurr12.getTime();
+
+
+
     var oNow = new Date();
     var iNow = oNow.getTime();
     if(iNow<timestamp1){
@@ -188,7 +552,20 @@
       $('.car_button').eq(3).addClass('po_ev').css('color','#ccc');
       $('.car_button').eq(4).addClass('po_ev').css('color','#ccc');
       $('.car_button').eq(5).addClass('po_ev').css('color','#ccc');
-    }else if(iNow>=timestamp2 && iNow<timestamp3){ //7号
+    }else if(iNow>=timestamp2 && iNow<timestamp3){ //6-7
+      $('#cwgItem1 .zhuangtai').eq(0).addClass('ysq');
+      $('#cwgItem1 .zhuangtai').eq(1).addClass('wks');
+      $('#cwgItem1 .zhuangtai').eq(2).addClass('wks');
+      $('#cwgItem1 .zhuangtai').eq(3).addClass('wks');
+      $('#cwgItem1 .zhuangtai').eq(4).addClass('wks');
+      $('#cwgItem1 .zhuangtai').eq(5).addClass('wks');
+      $('.car_button').eq(0).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(1).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(2).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(3).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(4).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(5).addClass('po_ev').css('color','#ccc');
+    }else if(iNow>=timestamp3 && iNow<timestamp4){ //7号
       $('#cwgItem1 .zhuangtai').eq(0).addClass('ysq');
       $('#cwgItem1 .zhuangtai').eq(1).removeClass('wks');
       $('#cwgItem1 .zhuangtai').eq(2).addClass('wks');
@@ -201,7 +578,20 @@
       $('.car_button').eq(3).addClass('po_ev').css('color','#ccc');
       $('.car_button').eq(4).addClass('po_ev').css('color','#ccc');
       $('.car_button').eq(5).addClass('po_ev').css('color','#ccc');
-    }else if(iNow>=timestamp3 && iNow<timestamp4){ //8号
+    }else if(iNow>=timestamp4 && iNow<timestamp5){ //7-8
+      $('#cwgItem1 .zhuangtai').eq(0).addClass('ysq');
+      $('#cwgItem1 .zhuangtai').eq(1).addClass('ysq');
+      $('#cwgItem1 .zhuangtai').eq(2).addClass('wks');
+      $('#cwgItem1 .zhuangtai').eq(3).addClass('wks');
+      $('#cwgItem1 .zhuangtai').eq(4).addClass('wks');
+      $('#cwgItem1 .zhuangtai').eq(5).addClass('wks');
+      $('.car_button').eq(0).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(1).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(2).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(3).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(4).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(5).addClass('po_ev').css('color','#ccc');
+    }else if(iNow>=timestamp5 && iNow<timestamp6){ //8号
       $('#cwgItem1 .zhuangtai').eq(0).addClass('ysq');
       $('#cwgItem1 .zhuangtai').eq(1).addClass('ysq');
       $('#cwgItem1 .zhuangtai').eq(2).removeClass('wks');
@@ -214,7 +604,20 @@
       $('.car_button').eq(3).addClass('po_ev').css('color','#ccc');
       $('.car_button').eq(4).addClass('po_ev').css('color','#ccc');
       $('.car_button').eq(5).addClass('po_ev').css('color','#ccc');
-    }else if(iNow>=timestamp4 && iNow<timestamp5){ //9号
+    }else if(iNow>=timestamp6 && iNow<timestamp7){ //8-9
+      $('#cwgItem1 .zhuangtai').eq(0).addClass('ysq');
+      $('#cwgItem1 .zhuangtai').eq(1).addClass('ysq');
+      $('#cwgItem1 .zhuangtai').eq(2).addClass('ysq');
+      $('#cwgItem1 .zhuangtai').eq(3).addClass('wks');
+      $('#cwgItem1 .zhuangtai').eq(4).addClass('wks');
+      $('#cwgItem1 .zhuangtai').eq(5).addClass('wks');
+      $('.car_button').eq(0).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(1).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(2).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(3).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(4).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(5).addClass('po_ev').css('color','#ccc');
+    }else if(iNow>=timestamp7 && iNow<timestamp8){ //9号
       $('#cwgItem1 .zhuangtai').eq(0).addClass('ysq');
       $('#cwgItem1 .zhuangtai').eq(1).addClass('ysq');
       $('#cwgItem1 .zhuangtai').eq(2).addClass('ysq');
@@ -227,7 +630,20 @@
       $('.car_button').eq(3).removeClass('po_ev').css('color','#ee060b');
       $('.car_button').eq(4).addClass('po_ev').css('color','#ccc');
       $('.car_button').eq(5).addClass('po_ev').css('color','#ccc');
-    }else if(iNow>=timestamp5 && iNow<timestamp6){ //10号
+    }else if(iNow>=timestamp8 && iNow<timestamp9){ //9-10
+      $('#cwgItem1 .zhuangtai').eq(0).addClass('ysq');
+      $('#cwgItem1 .zhuangtai').eq(1).addClass('ysq');
+      $('#cwgItem1 .zhuangtai').eq(2).addClass('ysq');
+      $('#cwgItem1 .zhuangtai').eq(3).addClass('ysq');
+      $('#cwgItem1 .zhuangtai').eq(4).addClass('wks');
+      $('#cwgItem1 .zhuangtai').eq(5).addClass('wks');
+      $('.car_button').eq(0).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(1).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(2).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(3).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(4).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(5).addClass('po_ev').css('color','#ccc');
+    }else if(iNow>=timestamp9 && iNow<timestamp10){ //10号
       $('#cwgItem1 .zhuangtai').eq(0).addClass('ysq');
       $('#cwgItem1 .zhuangtai').eq(1).addClass('ysq');
       $('#cwgItem1 .zhuangtai').eq(2).addClass('ysq');
@@ -240,8 +656,36 @@
       $('.car_button').eq(3).addClass('po_ev').css('color','#ccc');
       $('.car_button').eq(4).removeClass('po_ev').css('color','#ee060b');
       $('.car_button').eq(5).addClass('po_ev').css('color','#ccc');
-    }else if(iNow>=timestamp6){
+    }else if(iNow>=timestamp9 && iNow<timestamp10){ //10-11
+      $('#cwgItem1 .zhuangtai').eq(0).addClass('ysq');
+      $('#cwgItem1 .zhuangtai').eq(1).addClass('ysq');
+      $('#cwgItem1 .zhuangtai').eq(2).addClass('ysq');
+      $('#cwgItem1 .zhuangtai').eq(3).addClass('ysq');
+      $('#cwgItem1 .zhuangtai').eq(4).addClass('ysq');
+      $('#cwgItem1 .zhuangtai').eq(5).addClass('wks');
+      $('.car_button').eq(0).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(1).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(2).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(3).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(4).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(5).addClass('po_ev').css('color','#ccc');
+    }else if(iNow>=timestamp11 && iNow<timestamp12){ //11号
+      $('#cwgItem1 .zhuangtai').eq(0).addClass('ysq');
+      $('#cwgItem1 .zhuangtai').eq(1).addClass('ysq');
+      $('#cwgItem1 .zhuangtai').eq(2).addClass('ysq');
+      $('#cwgItem1 .zhuangtai').eq(3).addClass('ysq');
+      $('#cwgItem1 .zhuangtai').eq(4).addClass('ysq');
+      $('#cwgItem1 .zhuangtai').eq(5).removeClass('wks');
+      $('.car_button').eq(0).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(1).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(2).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(3).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(4).addClass('po_ev').css('color','#ccc');
+      $('.car_button').eq(5).removeClass('po_ev').css('color','#ee060b');
+    }else if(iNow>=timestamp12){
       clearInterval(timer2);
+    }else{
+
     }
   }
   msk1();
@@ -253,14 +697,46 @@
 
   //11号当天秒杀课
   function msk2(){
-    var timestamp1 = (new Date("2019/11/11 11:00:00")).getTime();
-    var timestamp2 = (new Date("2019/11/11 13:00:00")).getTime();
-    var timestamp3 = (new Date("2019/11/11 15:00:00")).getTime();
-    var timestamp4 = (new Date("2019/11/11 17:00:00")).getTime();
-    var timestamp5 = (new Date("2019/11/11 19:00:00")).getTime();
-    var timestamp6 = (new Date("2019/11/11 21:00:00")).getTime();
-    var timestamp7 = (new Date("2019/11/11 23:00:00")).getTime();
-    var timestamp8 = (new Date("2019/11/11 24:00:00")).getTime();
+    //var timestamp1 = (new Date("2019/11/11 11:00:00")).getTime();
+    var oCurr1 = new Date();
+    oCurr1.setFullYear(2019,10,11);
+    oCurr1.setHours(11,0,0,0);
+    var timestamp1 = oCurr1.getTime();
+    //var timestamp2 = (new Date("2019/11/11 13:00:00")).getTime();
+    var oCurr2 = new Date();
+    oCurr2.setFullYear(2019,10,11);
+    oCurr2.setHours(13,0,0,0);
+    var timestamp2 = oCurr2.getTime();
+    //var timestamp3 = (new Date("2019/11/11 15:00:00")).getTime();
+    var oCurr3 = new Date();
+    oCurr3.setFullYear(2019,10,11);
+    oCurr3.setHours(15,0,0,0);
+    var timestamp3 = oCurr3.getTime();
+    //var timestamp4 = (new Date("2019/11/11 17:00:00")).getTime();
+    var oCurr4 = new Date();
+    oCurr4.setFullYear(2019,10,11);
+    oCurr4.setHours(17,0,0,0);
+    var timestamp4 = oCurr4.getTime();
+    //var timestamp5 = (new Date("2019/11/11 19:00:00")).getTime();
+    var oCurr5 = new Date();
+    oCurr5.setFullYear(2019,10,11);
+    oCurr5.setHours(19,0,0,0);
+    var timestamp5 = oCurr5.getTime();
+    //var timestamp6 = (new Date("2019/11/11 21:00:00")).getTime();
+    var oCurr6 = new Date();
+    oCurr6.setFullYear(2019,10,11);
+    oCurr6.setHours(21,0,0,0);
+    var timestamp6 = oCurr6.getTime();
+    //var timestamp7 = (new Date("2019/11/11 23:00:00")).getTime();
+    var oCurr7 = new Date();
+    oCurr7.setFullYear(2019,10,11);
+    oCurr7.setHours(23,0,0,0);
+    var timestamp7 = oCurr7.getTime();
+    //var timestamp8 = (new Date("2019/11/11 24:00:00")).getTime();
+    var oCurr8 = new Date();
+    oCurr8.setFullYear(2019,10,11);
+    oCurr8.setHours(24,0,0,0);
+    var timestamp8 = oCurr8.getTime();
 
     var oNow = new Date();
     var iNow = oNow.getTime();
@@ -413,36 +889,62 @@
 
   //12号-13号当天秒杀课
   function msk3(){
-    var timestamp1 = (new Date("2019/11/11 24:00:00")).getTime();
-    var timestamp2 = (new Date("2019/11/12 24:00:00")).getTime();
-    var timestamp3 = (new Date("2019/11/13 24:00:00")).getTime();
+    
+    var oCurr1 = new Date();
+    oCurr1.setFullYear(2019,10,12);
+    oCurr1.setHours(19,0,0,0);
+    var timestamp1 = oCurr1.getTime();
+    
+    var oCurr2 = new Date();
+    oCurr2.setFullYear(2019,10,12);
+    oCurr2.setHours(19,30,0,0);
+    var timestamp2 = oCurr2.getTime();
+    
+    var oCurr3 = new Date();
+    oCurr3.setFullYear(2019,10,13);
+    oCurr3.setHours(19,0,0,0);
+    var timestamp3 = oCurr3.getTime();
+
+    var oCurr4 = new Date();
+    oCurr4.setFullYear(2019,10,13);
+    oCurr4.setHours(19,30,0,0);
+    var timestamp4 = oCurr4.getTime();
 
     var oNow = new Date();
     var iNow = oNow.getTime();
-    if(iNow<timestamp1){ //12号前
+
+
+    console.log('aaa+++'+iNow);
+    console.log('timestamp4+++'+timestamp4);
+    if(iNow<timestamp1){ 
       $('#cwgItem3 .zhuangtai').eq(0).addClass('wks');
       $('#cwgItem3 .zhuangtai').eq(1).addClass('wks');
 
       $('#cwgItem3 .car_button').eq(0).addClass('po_ev').css('color','#ccc');
       $('#cwgItem3 .car_button').eq(1).addClass('po_ev').css('color','#ccc');
-    }else if(iNow>=timestamp1 && iNow<timestamp2){ //12
+    }else if(iNow>=timestamp1 && iNow<timestamp2){ 
       $('#cwgItem3 .zhuangtai').eq(0).removeClass('wks');
       $('#cwgItem3 .zhuangtai').eq(1).addClass('wks');
 
       $('#cwgItem3 .car_button').eq(0).removeClass('po_ev').css('color','#ee060b');
       $('#cwgItem3 .car_button').eq(1).addClass('po_ev').css('color','#ccc');
-    }else if(iNow>=timestamp2 && iNow<timestamp3){ //13
+    }else if(iNow>=timestamp2 && iNow<timestamp3){ 
       $('#cwgItem3 .zhuangtai').eq(0).addClass('ysq');
-      $('#cwgItem3 .zhuangtai').eq(1).removeClass('wks');
+      $('#cwgItem3 .zhuangtai').eq(1).addClass('wks');
+      $('#cwgItem3 .car_button').eq(0).addClass('po_ev').css('color','#ccc');
+      $('#cwgItem3 .car_button').eq(1).addClass('po_ev').css('color','#ccc');
+    }else if(iNow>=timestamp3 && iNow<timestamp4){ 
+      $('#cwgItem3 .zhuangtai').eq(0).addClass('ysq');
+      $('#cwgItem3 .zhuangtai').eq(1).removeClass('ysq');
       $('#cwgItem3 .car_button').eq(0).addClass('po_ev').css('color','#ccc');
       $('#cwgItem3 .car_button').eq(1).removeClass('po_ev').css('color','#ee060b');
-    }else if(iNow>=timestamp3){ //13号以后
+    }else if(iNow>=timestamp4){
       $('#cwgItem3 .zhuangtai').eq(0).addClass('ysq');
       $('#cwgItem3 .zhuangtai').eq(1).addClass('ysq');
       $('#cwgItem3 .car_button').eq(0).addClass('po_ev').css('color','#ccc');
       $('#cwgItem3 .car_button').eq(1).addClass('po_ev').css('color','#ccc');
       clearInterval(timer6);
-    } 
+    }
   }
   msk3();
   clearInterval(timer6);
@@ -452,15 +954,50 @@
 
   //14号-17号当天秒杀课
   function msk4(){
-    var timestamp1 = (new Date("2019/11/13 24:00:00")).getTime();
-    var timestamp2 = (new Date("2019/11/14 24:00:00")).getTime();
-    var timestamp3 = (new Date("2019/11/15 24:00:00")).getTime();
-    var timestamp4 = (new Date("2019/11/16 24:00:00")).getTime();
-    var timestamp5 = (new Date("2019/11/17 24:00:00")).getTime();
+    
+    var oCurr1 = new Date();
+    oCurr1.setFullYear(2019,10,14);
+    oCurr1.setHours(19,0,0,0);
+    var timestamp1 = oCurr1.getTime();
+    
+    var oCurr2 = new Date();
+    oCurr2.setFullYear(2019,10,14);
+    oCurr2.setHours(19,30,0,0);
+    var timestamp2 = oCurr2.getTime();
+    
+    var oCurr3 = new Date();
+    oCurr3.setFullYear(2019,10,15);
+    oCurr3.setHours(19,0,0,0);
+    var timestamp3 = oCurr3.getTime();
+    
+    var oCurr4 = new Date();
+    oCurr4.setFullYear(2019,10,15);
+    oCurr4.setHours(19,30,0,0);
+    var timestamp4 = oCurr4.getTime();
+    
+    var oCurr5 = new Date();
+    oCurr5.setFullYear(2019,10,16);
+    oCurr5.setHours(19,0,0,0);
+    var timestamp5 = oCurr5.getTime();
+    
+    var oCurr6 = new Date();
+    oCurr6.setFullYear(2019,10,16);
+    oCurr6.setHours(19,30,0,0);
+    var timestamp6 = oCurr6.getTime();
+    
+    var oCurr7 = new Date();
+    oCurr7.setFullYear(2019,10,17);
+    oCurr7.setHours(19,0,0,0);
+    var timestamp7 = oCurr7.getTime();
+    
+    var oCurr8 = new Date();
+    oCurr8.setFullYear(2019,10,17);
+    oCurr8.setHours(19,30,0,0);
+    var timestamp8 = oCurr8.getTime();
 
     var oNow = new Date();
     var iNow = oNow.getTime();
-    if(iNow<timestamp1){ //14号前
+    if(iNow<timestamp1){ //14号7:00前
       $('#cwgItem4 .zhuangtai').eq(0).addClass('wks');
       $('#cwgItem4 .zhuangtai').eq(1).addClass('wks');
       $('#cwgItem4 .zhuangtai').eq(2).addClass('wks');
@@ -470,7 +1007,7 @@
       $('#cwgItem4 .car_button').eq(1).addClass('po_ev').css('color','#ccc');
       $('#cwgItem4 .car_button').eq(2).addClass('po_ev').css('color','#ccc');
       $('#cwgItem4 .car_button').eq(3).addClass('po_ev').css('color','#ccc');
-    }else if(iNow>=timestamp1 && iNow<timestamp2){ //14
+    }else if(iNow>=timestamp1 && iNow<timestamp2){ 
       $('#cwgItem4 .zhuangtai').eq(0).removeClass('wks');
       $('#cwgItem4 .zhuangtai').eq(1).addClass('wks');
       $('#cwgItem4 .zhuangtai').eq(2).addClass('wks');
@@ -480,7 +1017,17 @@
       $('#cwgItem4 .car_button').eq(1).addClass('po_ev').css('color','#ccc');
       $('#cwgItem4 .car_button').eq(2).addClass('po_ev').css('color','#ccc');
       $('#cwgItem4 .car_button').eq(3).addClass('po_ev').css('color','#ccc');
-    }else if(iNow>=timestamp2 && iNow<timestamp3){ //15
+    }else if(iNow>=timestamp2 && iNow<timestamp3){ 
+      $('#cwgItem4 .zhuangtai').eq(0).addClass('ysq');
+      $('#cwgItem4 .zhuangtai').eq(1).addClass('wks');
+      $('#cwgItem4 .zhuangtai').eq(2).addClass('wks');
+      $('#cwgItem4 .zhuangtai').eq(3).addClass('wks');
+
+      $('#cwgItem4 .car_button').eq(0).addClass('po_ev').css('color','#ccc');
+      $('#cwgItem4 .car_button').eq(1).addClass('po_ev').css('color','#ccc');
+      $('#cwgItem4 .car_button').eq(2).addClass('po_ev').css('color','#ccc');
+      $('#cwgItem4 .car_button').eq(3).addClass('po_ev').css('color','#ccc');
+    }else if(iNow>=timestamp3 && iNow<timestamp4){ 
       $('#cwgItem4 .zhuangtai').eq(0).addClass('ysq');
       $('#cwgItem4 .zhuangtai').eq(1).removeClass('wks');
       $('#cwgItem4 .zhuangtai').eq(2).addClass('wks');
@@ -490,17 +1037,37 @@
       $('#cwgItem4 .car_button').eq(1).removeClass('po_ev').css('color','#ee060b');
       $('#cwgItem4 .car_button').eq(2).addClass('po_ev').css('color','#ccc');
       $('#cwgItem4 .car_button').eq(3).addClass('po_ev').css('color','#ccc');
-    }else if(iNow>=timestamp3 && iNow<timestamp4){ //16
+    }else if(iNow>=timestamp4 && iNow<timestamp5){
       $('#cwgItem4 .zhuangtai').eq(0).addClass('ysq');
-      $('#cwgItem4 .zhuangtai').eq(1).addClass('wks');
-      $('#cwgItem4 .zhuangtai').eq(2).removeClass('wks');
+      $('#cwgItem4 .zhuangtai').eq(1).addClass('ysq');
+      $('#cwgItem4 .zhuangtai').eq(2).addClass('wks');
       $('#cwgItem4 .zhuangtai').eq(3).addClass('wks');
+
+      $('#cwgItem4 .car_button').eq(0).addClass('po_ev').css('color','#ccc');
+      $('#cwgItem4 .car_button').eq(1).addClass('po_ev').css('color','#ccc');
+      $('#cwgItem4 .car_button').eq(2).addClass('po_ev').css('color','#ccc');
+      $('#cwgItem4 .car_button').eq(3).addClass('po_ev').css('color','#ccc');
+    }else if(iNow>=timestamp5 && iNow<timestamp6){
+      $('#cwgItem4 .zhuangtai').eq(0).addClass('ysq');
+      $('#cwgItem4 .zhuangtai').eq(1).addClass('ysq');
+      $('#cwgItem4 .zhuangtai').eq(2).removeClass('wks');
+      $('#cwgItem4 .zhuangtai').eq(3).addClass('ysq');
 
       $('#cwgItem4 .car_button').eq(0).addClass('po_ev').css('color','#ccc');
       $('#cwgItem4 .car_button').eq(1).addClass('po_ev').css('color','#ccc');
       $('#cwgItem4 .car_button').eq(2).removeClass('po_ev').css('color','#ee060b');
       $('#cwgItem4 .car_button').eq(3).addClass('po_ev').css('color','#ccc');
-    }else if(iNow>=timestamp4 && iNow<timestamp5){ //17
+    }else if(iNow>=timestamp6 && iNow<timestamp7){
+      $('#cwgItem4 .zhuangtai').eq(0).addClass('ysq');
+      $('#cwgItem4 .zhuangtai').eq(1).addClass('ysq');
+      $('#cwgItem4 .zhuangtai').eq(2).addClass('ysq');
+      $('#cwgItem4 .zhuangtai').eq(3).addClass('wks');
+
+      $('#cwgItem4 .car_button').eq(0).addClass('po_ev').css('color','#ccc');
+      $('#cwgItem4 .car_button').eq(1).addClass('po_ev').css('color','#ccc');
+      $('#cwgItem4 .car_button').eq(2).addClass('po_ev').css('color','#ccc');
+      $('#cwgItem4 .car_button').eq(3).addClass('po_ev').css('color','#ccc');
+    }else if(iNow>=timestamp7 && iNow<timestamp8){
       $('#cwgItem4 .zhuangtai').eq(0).addClass('ysq');
       $('#cwgItem4 .zhuangtai').eq(1).addClass('ysq');
       $('#cwgItem4 .zhuangtai').eq(2).addClass('ysq');
@@ -510,7 +1077,7 @@
       $('#cwgItem4 .car_button').eq(1).addClass('po_ev').css('color','#ccc');
       $('#cwgItem4 .car_button').eq(2).addClass('po_ev').css('color','#ccc');
       $('#cwgItem4 .car_button').eq(3).removeClass('po_ev').css('color','#ee060b');
-    }else if(iNow>=timestamp5){
+    }else if(iNow>=timestamp8){
       $('#cwgItem4 .zhuangtai').eq(0).addClass('ysq');
       $('#cwgItem4 .zhuangtai').eq(1).addClass('ysq');
       $('#cwgItem4 .zhuangtai').eq(2).addClass('ysq');
@@ -520,7 +1087,7 @@
       $('#cwgItem4 .car_button').eq(1).addClass('po_ev').css('color','#ccc');
       $('#cwgItem4 .car_button').eq(2).addClass('po_ev').css('color','#ccc');
       $('#cwgItem4 .car_button').eq(3).addClass('po_ev').css('color','#ccc');
-      clearInterval(timer7)
+      clearInterval(timer7);
     }
   }
   msk4();
@@ -531,10 +1098,26 @@
 
   //秒杀课定时显示按钮及内容
   function msbtn(){
-    var timestamp1 = (new Date("2019/11/10 24:00:00")).getTime();
-    var timestamp2 = (new Date("2019/11/11 24:00:00")).getTime();
-    var timestamp3 = (new Date("2019/11/13 24:00:00")).getTime();
-    var timestamp4 = (new Date("2019/11/17 24:00:00")).getTime();
+    //var timestamp1 = (new Date("2019/11/10 24:00:00")).getTime();
+    var oCurr1 = new Date();
+    oCurr1.setFullYear(2019,10,10);
+    oCurr1.setHours(24,0,0,0);
+    var timestamp1 = oCurr1.getTime();
+    //var timestamp2 = (new Date("2019/11/11 24:00:00")).getTime();
+    var oCurr2 = new Date();
+    oCurr2.setFullYear(2019,10,11);
+    oCurr2.setHours(24,0,0,0);
+    var timestamp2 = oCurr2.getTime();
+    //var timestamp3 = (new Date("2019/11/13 24:00:00")).getTime();
+    var oCurr3 = new Date();
+    oCurr3.setFullYear(2019,10,13);
+    oCurr3.setHours(24,0,0,0);
+    var timestamp3 = oCurr3.getTime();
+    //var timestamp4 = (new Date("2019/11/17 24:00:00")).getTime();
+    var oCurr4 = new Date();
+    oCurr4.setFullYear(2019,10,17);
+    oCurr4.setHours(24,0,0,0);
+    var timestamp4 = oCurr4.getTime();
     var oNow = new Date();
     var iNow = oNow.getTime();
 
@@ -592,14 +1175,6 @@
     msbtn();
   },1000);
 
-
-
-
-
-
-
-
-
   //公共课DOM方法
   function publicDOM(id,dataArr){
     $(id).empty();
@@ -607,7 +1182,7 @@
       var clHtml = '<li class="cl_item">'
                     +'<span class="ecibodyItem ecibodyItem1"><em class="chkbx"></em>'+n.subject+'</span>'
                     +'<span class="ecibodyItem ecibodyItem2"><a href="'+n.courseHref+'" class="cl_name">'+n.courseName+'</a></span>'
-                    +'<span class="ecibodyItem ecibodyItem3" data-type="'+n.courseType+'">'+n.prise+'</span>'
+                    +'<span class="ecibodyItem ecibodyItem3"><i>'+n.prise+'</i>'+n.lprise+'</span>'
                     +'<span class="ecibodyItem ecibodyItem4"><a href="'+n.playHref+'" class="play"></a></span>'
                     +'<span class="ecibodyItem ecibodyItem5"><em onclick="NTKF.im_openInPageChat\(\'kf_10176_1522033629076\'\)" class="consult"></em></span>'
                   +'</li>';
@@ -616,7 +1191,6 @@
   }
   //21公共课DOM
   publicDOM('#public21',publicCourse21);
-
 
   //专业课二级内容DOM方法
   function majorDOM(pid,data){
@@ -633,7 +1207,7 @@
         var clHtml = '<li class="cl_item">'
                     +'<span class="ecibodyItem ecibodyItem1"><em class="chkbx"></em>'+m.subject+'</span>'
                     +'<span class="ecibodyItem ecibodyItem2"><a href="'+m.courseHref+'" class="cl_name">'+m.courseName+'</a></span>'
-                    +'<span class="ecibodyItem ecibodyItem3" data-type="'+m.courseType+'">'+m.prise+'</span>'
+                    +'<span class="ecibodyItem ecibodyItem3" data-type="'+m.courseType+'"><i>'+m.prise+'</i>'+m.lprise+'</span>'
                     +'<span class="ecibodyItem ecibodyItem4"><a href="'+m.playHref+'" class="play"></a></span>'
                     +'<span class="ecibodyItem ecibodyItem5"><em onclick="NTKF.im_openInPageChat\(\'kf_10176_1522033629076\'\)" class="consult"></em></span>'
                   +'</li>';
@@ -695,6 +1269,7 @@
       var index = $(this).index();
       console.log('21专业课二级切换==='+index);
       $('#eciBody1 .courseList').eq(index).show().siblings().hide();
+      $('#eciBody1 .courseList').eq(index).siblings().find('.chkbx').removeClass('chkbx_g')
       ccc(index);
     })
   });
@@ -888,15 +1463,15 @@
         function dbPrise1(pTxt){
           console.log(pTxt)
           if(pTxt>=500 && pTxt<1000){
-            $('#dazhe').html('500减100');
+            $('#dazhe').html('中公11.11，考研好课节');
           }else if(pTxt>=1000 && pTxt<2000){
-            $('#dazhe').html('1000减200');
+            $('#dazhe').html('中公11.11，考研好课节');
           }else if(pTxt>=2000 && pTxt<3000){
-            $('#dazhe').html('2000减300');
+            $('#dazhe').html('中公11.11，考研好课节');
           }else if(pTxt>=3000 && pTxt<4000){
-            $('#dazhe').html('3000减400');
+            $('#dazhe').html('中公11.11，考研好课节');
           }else if(pTxt>4000){
-            $('#dazhe').html('4000减500');
+            $('#dazhe').html('中公11.11，考研好课节');
           }
         }
         var yhTxt;
@@ -1094,15 +1669,17 @@
   function ccc(index){
     $('#courseList_1'+index).find('.cl_item').each(function(i,n){
       //$('#courseList_0'+index).find('.cl_item').find('.chkbx').removeClass('chkbx_g');
+      
       $(this).find('.chkbx').on('click',function(){
         //$(this).toggleClass("chkbx_g");
         var idx = $(this).parent().parent().index();
         var hasC = $(this).hasClass("chkbx_g");
-        console.log('按钮:::'+index+'==='+idx)
-        console.log('hasC+++'+hasC);
+        //console.log('按钮:::'+index+'==='+idx)
+        console.log('hasC=='+hasC);
         if(hasC == true){
           $('.eFoot_l').hide();
           $(this).removeClass('chkbx_g');
+          $(this).hasClass("chkbx_g") == false;
           $('.sprint').attr('href','javascript:;').removeClass('spirit_opa');
         }else{
           var chkbxC = $(this).parent().parent().siblings().children();
@@ -1149,7 +1726,7 @@
     var fadeItem =$("#fadetop>.fadeItem:eq(0)").clone();
     
     //使用animate对li的外边距进行调整从而达到向上滚动的效果
-    $("#fadetop>.fadeItem:eq(0)").animate({marginTop:"-173px"},2000,function(){
+    $("#fadetop>.fadeItem:eq(0)").animate({marginTop:"-1.62rem"},2000,function(){
       //对已经消失的li进行删除
       $("#fadetop>.fadeItem:eq(0)").remove();
       //把复制后的li插入到最后

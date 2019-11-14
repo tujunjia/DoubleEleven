@@ -105,7 +105,7 @@
 .eConItem .eciTabsCon .eciConItem .eciHead .eciheadItem4,
 .eConItem .eciTabsCon .eciConItem .eciHead .eciheadItem5 {
   flex: none;
-  width: 70px;
+  width: 125px;
 }
 .eConItem .eciTabsCon .eciConItem .eciBody {
   padding: 0 12px;
@@ -143,6 +143,7 @@
 }
 .eConItem .eciTabsCon .eciConItem .eciBody .courseList .cl_item .ecibodyItem .cl_name {
   color: #3a3a3a;
+  font-size:21px;
 }
 .eConItem .eciTabsCon .eciConItem .eciBody .courseList .cl_item .ecibodyItem .play {
   display: inline-block;
@@ -170,7 +171,16 @@
 .eConItem .eciTabsCon .eciConItem .eciBody .courseList .cl_item .ecibodyItem4,
 .eConItem .eciTabsCon .eciConItem .eciBody .courseList .cl_item .ecibodyItem5 {
   flex: none;
-  width: 70px;
+  width: 125px;
+}
+.eConItem .eciTabsCon .eciConItem .eciBody .courseList .cl_item .ecibodyItem3{
+  color:#e42e04;
+}
+.eConItem .eciTabsCon .eciConItem .eciBody .courseList .cl_item .ecibodyItem3 i{
+  margin-right: 10px;
+  text-decoration: line-through;
+  font-size: 18px;
+  color:#ccc;
 }
 .eConItem .eciTabsCon .eciConItem .eciBody .courseList .cl_item:last-child {
   border: none;

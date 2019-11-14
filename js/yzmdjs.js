@@ -5,6 +5,7 @@ $(function () {
         var info = {};
 
         info.name=$("#name").val();
+        info.subject=$("#subject").val();
         info.number=$("#tel").val();
         info.code=$("#codema").val();
 
@@ -12,7 +13,10 @@ $(function () {
             alert('请填写姓名');
             return false;
         }
-        
+        if($("#subject option:selected").val()==0){
+            alert('请选择专业名称');
+            return false;
+        }
         if (info.number== ''){
             alert('请填写手机号码');
             return false;
@@ -76,7 +80,6 @@ $(function () {
             alert('请填写姓名');
             return false;
         }
-        
         if (info.number== ''){
             alert('请填写手机号码');
             return false;
@@ -113,7 +116,9 @@ $(function () {
             }
         })
     })
+    
     $("#getyzm1").click(function(event) {
+        alert(1);
         var phone = $("#tel1").val();
         $.ajax({
             url: 'http://www.kaoyan365.cn/index.php?m=formguide&c=forms&a=sendmsg&phone='+phone+'+&formid=72&pro=cll',

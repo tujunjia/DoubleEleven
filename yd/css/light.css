@@ -1,0 +1,102 @@
+
+.light {
+  width: 5.87rem;
+  height: 5.02rem;
+  margin: .2rem auto 0;
+  background:url(../images/choujiang_bg.png) no-repeat;
+  background-size: 100% 100%;
+  /* padding: .47rem .56rem .63rem .49rem; */
+  padding:.4rem;
+  box-sizing: border-box;
+}
+.light .gift_div {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+.gift_div>div {
+  position: absolute;
+  width: 1.63rem;
+  height: 1.33rem;
+  text-indent: -9999rem;
+}
+.gift1{
+  background: url(../images/yhq_30.png) no-repeat;
+  background-size: 100% 100%;
+}
+.gift2{
+  background: url(../images/yhq_70.png) no-repeat;
+  background-size: 100% 100%;
+}
+.gift3{
+  background: url(../images/yhq_book.png) no-repeat;
+  background-size: 100% 100%;
+}
+.gift4{
+  background: url(../images/yhq_50.png) no-repeat;
+  background-size: 100% 100%;
+}
+.gift5{
+  background: url(../images/yhq_zz.png) no-repeat;
+  background-size: 100% 100%;
+}
+.gift6{
+  background: url(../images/yhq_yy.png) no-repeat;
+  background-size: 100% 100%;
+}
+.gift7{
+  background: url(../images/yhq_jxlh.png) no-repeat;
+  background-size: 100% 100%;
+}
+.gift8{
+  background: url(../images/yhq_2021.png) no-repeat;
+  background-size: 100% 100%;
+}
+.gift2,
+.gift6,
+.start{
+  left: 1.73rem;
+}
+.gift3,
+.gift4,
+.gift5{
+  right: 0;
+}
+.gift4,
+.gift8,
+.start{
+  top: 1.42rem;
+}
+.gift5,
+.gift6,
+.gift7{
+  bottom: 0;
+}
+.gift_div .start{
+  background: url(../images/yhq_btn.png) no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+  line-height: 1.73rem;
+  color: #FF001F;
+  cursor: pointer;
+}
+.red{
+  color: red;
+}
+.num{
+  text-align: center;
+  font-size: .32rem;
+  line-height: .6rem;
+  background: #E6EFEC;
+  border-radius: .6rem;
+}
+.gift_b:after{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.6);
+  content: '';
+  left: 0;
+  border-radius: .18rem;
+}

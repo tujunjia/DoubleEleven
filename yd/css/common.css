@@ -85,6 +85,10 @@ p,ul, ol{
 img{
   vertical-align: top;
 }
+.inner{
+  padding:0 .2rem;
+  height:100%;
+}
 /**  公共样式  END   **/
 
 /* head */
@@ -115,7 +119,7 @@ img{
   color: #fff;
   line-height: .9rem;
   font-weight: bold;
-  background: url(../images/headTel.png) no-repeat left center;
+  background: url(../images/hf_img/headTel.png) no-repeat left center;
   background-size: .24rem .3rem;
   font-size:.18rem;
 }
@@ -175,90 +179,92 @@ footer a em{
   font-size:.26rem;
 }
 .footerTel em{
-  background-image: url(../images/footerTel.png);
+  background-image: url(../images/hf_img/footerTel.png);
   font-style: italic;
   padding-left: .5rem;
 }
 .footerOnline{background: #ffad11;font-size:.26rem;}
 .footerOnline em{
-  background-image: url(../images/footeronline.png);    
+  background-image: url(../images/hf_img/footeronline.png);    
   padding-left: .5rem;
 }
 
 /* 方正兰亭黑简体 */
 @font-face {
   font-family: 'FZLTHJW';
-  src: url('../fonts/FZLTHJW.TTF') format('truetype');
+  src: url('../../fonts/FZLTHJW.TTF') format('truetype'),     /*IE9+,FireFox3.5+,Chrome4.0+,Safari3+,Opera10+,IOS Mobile Safari4.2+,Android,iOS*/
+      url('../../fonts/FZLTHJW.eot'),     /* IE9 Compat Modes */
+      url('../../fonts/FZLTHJW.eot?#iefix') format('embedded-opentype');         
   font-weight: normal;
   font-style: normal;
 }
 /* 方正兰亭粗黑简体 */
 @font-face {
   font-family: 'FZLTCHJW';
-  src: url('../fonts/FZLTCHJW.TTF') format('truetype');
+  src: url('../../fonts/FZLTCHJW.TTF') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 /* 方正兰亭特黑简体 */
 @font-face {
   font-family: 'FZLTTHJW';
-  src: url('../fonts/FZLTTHJW.TTF') format('truetype');
+  src: url('../../fonts/FZLTTHJW.TTF') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 /* 方正汉真广标简体 */
 @font-face {
   font-family: 'FZHZGBJW';
-  src: url('../fonts/FZHZGBJW.TTF') format('truetype');
+  src: url('../../fonts/FZHZGBJW.TTF') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 /* 方正粗谭黑简体 */
 @font-face {
   font-family: 'FZCTHJW';
-  src: url('../fonts/FZCTHJW.TTF') format('truetype');
+  src: url('../../fonts/FZCTHJW.TTF') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 /* 方正粉丝天下简体 */
 @font-face {
   font-family: 'FZFenSTXJW';
-  src: url('../fonts/FZFenSTXJW.TTF') format('truetype');
+  src: url('../../fonts/FZFenSTXJW.TTF') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 /* 方正清刻本悦宋简体 */
 @font-face {
   font-family: 'FZQKBYSJW';
-  src: url('../fonts/FZQKBYSJW.TTF') format('truetype');
+  src: url('../../fonts/FZQKBYSJW.TTF') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 /* 方正趣宋简体 */
 @font-face {
   font-family: 'FZQuSJW';
-  src: url('../fonts/FZQuSJW.TTF') format('truetype');
+  src: url('../../fonts/FZQuSJW.TTF') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 /* 方正尚酷简体 */
 @font-face {
   font-family: 'FZShangKJW';
-  src: url('../fonts/FZShangKJW.TTF') format('truetype');
+  src: url('../../fonts/FZShangKJW.TTF') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 /* 方正特雅宋简体 */
 @font-face {
   font-family: 'FZTYSJW';
-  src: url('../fonts/FZTYSJW.ttf') format('truetype');
+  src: url('../../fonts/FZTYSJW.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 /* 站酷小薇 */
 @font-face {
   font-family: 'ZKXW';
-  src: url('../fonts/站酷小薇LOGO体.otf') format('truetype');
+  src: url('../../fonts/zkxw.otf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

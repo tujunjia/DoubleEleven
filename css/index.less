@@ -5,25 +5,36 @@
   z-index: 10;
   .honeybee{
     width:193px;
-    height:178px;
+    height:202px;
     background:url(../images/honeybee.png) no-repeat;
     background-size:cover;
-    padding-top:111px;
+    padding-top:96px;
     text-align:center;
     line-height: 21px;
     color:#fff;
     font-size:16px;
     font-family: 'FZLTCHJW';
-    .hbinner{
+    a{
       font-size:14px;
       font-family: 'FZLTHJW';
+      color:#fff;
+      border-bottom: 1px solid #ccc;
+      span{
+        font-family: 'FZLTCHJW';
+      }
     }
   }
   .qrCode{
     position:absolute;
     left:0;
-    top:178px;
+    top:190px;
     display:none;
+    width:190px;
+    height:190px;
+    img{
+      width:100%;
+      height:100%;
+    }
   }
   &:hover{
     cursor: default;
@@ -243,7 +254,9 @@
                 bottom:0;
               }
             }
-            
+            .shuangjl{
+              background: url(../images/shuangjl.jpg) no-repeat;
+            }
             .wks{
               background:url(../images/wks.png) no-repeat;
             }
@@ -306,7 +319,7 @@
     background:url(../images/bg_02.png) no-repeat;
     background-size:100% 100%;
     .cw_tit2{
-      width:649px;
+      width:762px;
       height:92px;
       background:url(../images/tit_img_02.png) no-repeat;
       margin:0 auto;
@@ -318,8 +331,8 @@
       margin:45px auto 0;
       box-shadow: 0 0 50px #ec2645;
       border-radius: 20px;
-      padding:20px;
-      video{
+      padding: 22px 20px 20px;
+      iframe{
         width:100%;
         height:100%;
       }
@@ -372,7 +385,8 @@
           background-color: #ffffff;
           border-radius: 8px;
           display: flex;
-          justify-content: space-between;
+          //justify-content: space-between;
+          justify-content: flex-start;
           align-items: flex-start;
           .leftcontent {
             width: 515px;
@@ -424,16 +438,19 @@
             padding: 29px 0px 0px 60px;
             .luquba {
               width: 340px;
-              margin: 0px auto;
+              //margin: 0px auto;
               margin-top: 29px;
               display: flex;
-              justify-content: space-between;
-              align-items: flex-start;
+              //justify-content: space-between;
+              justify-content: center;
+              //align-items: flex-start;
+              align-items: center;
               .luquba_item {
-                width: 70px;
+                //width: 70px;
+                width:100%;
                 height: 125px;
                 display: flex;
-                flex-direction: column;
+                //flex-direction: column;
                 justify-content: space-between;
                 align-items: center;
                 .top {
@@ -442,8 +459,15 @@
                   line-height: 40px;
                   text-align: center;
                   font-size:40px;
-                  color:#905ce9;
-                  font-family: 'FZHZGBJW';
+                  //color:#905ce9;
+                  color:#9c62ee;
+                  //font-family: 'FZHZGBJW';
+                  font-family: 'FZLTCHJW';
+                  em{
+                    font-style:normal;
+                    font-size:66px;
+                    color:#f3b126;
+                  }
                 }
                 .bottom {
                   width: 100%;
@@ -488,6 +512,8 @@
                   font-size:22px;
                   color:#905ce9;
                   font-family: 'FZLTCHJW';
+                  display: block;
+                  margin-top: 20px;
                 }
               }
             }
@@ -586,9 +612,10 @@
   }
   .hotCourse5{
     width:100%;
-    height:2427px;
+    //height:2427px;
     background:url(../images/bg_05.png) no-repeat;
     background-size:100% 100%;
+    padding-bottom: 30px;
     .cw_tit5{
       width:689px;
       height:93px;
@@ -763,7 +790,7 @@
       .cjTxt{
         width:308px;
         height:575px;
-        padding:35px 14px 0 30px;
+        padding:15px 14px 0 30px;
         .cj_tit{
           width:193px;
           height:50px;
@@ -772,7 +799,7 @@
           border-radius:25px;
           text-align: center;
           line-height: 50px;
-          margin:0 auto 35px;
+          margin:0 auto 20px;
           color:#f24900;
           font-size:30px;
           font-family: 'FZLTCHJW';
@@ -877,8 +904,8 @@
       height:73px;
       background:url(../images/close.png) no-repeat center center;
       position:absolute;
-      right:-88px;
-      top:-88px;
+      right: 2px;
+      top: 16px;
       cursor: pointer;
     }
   }
@@ -962,7 +989,7 @@
 .fixedBot{
   width: 100%;
   height: 102px;
-  background: #424c5a;
+  background: #1e1e1f;
   position: fixed;
   bottom: 0;
   padding-top: 12px;
@@ -989,7 +1016,15 @@
         width:140px;
         height:35px;
         border-radius:10px;
-        padding-left:20px;
+        padding-left:10px;
+        font-size:16px;
+        color:#515151;
+      }
+      select{
+        width:140px;
+        height:35px;
+        border-radius:10px;
+        padding-left:10px;
         font-size:16px;
         color:#515151;
       }
@@ -1026,12 +1061,12 @@
           width: 134px;
           height: 38px;
           display: block;
-          background: #fc5f34;
+          background: #fed228;
           border-radius: 25px;
           text-align: center;
           line-height: 38px;
           font-size: 18px;
-          color: #fff;
+          color: #1b1b1b;
           font-family: 'FZLTCHJW';
           margin: 0 15px;
         }
